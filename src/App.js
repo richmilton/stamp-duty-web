@@ -128,7 +128,7 @@ class App extends Component {
                 {Object.keys(buyerTypes).sort().reverse().map(propName => (
                   <option
                     key={buyerTypes[propName]}
-                    name={buyerTypes[propName]}>
+                    value={buyerTypes[propName]}>
                     {buyerTypeLabels[buyerTypes[propName]]}
                   </option>
                 ))
