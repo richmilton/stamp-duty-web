@@ -140,8 +140,11 @@ class App extends Component {
         <div className="container">
           <div className="row border-bottom font-weight-bold">
             <div className="col-12">
-              {`total tax due: ${currencySymbol + tax.toFixed(2)} calculated from bands below`}
+              {`${currencySymbol + tax.toFixed(2)} tax due`}
             </div>
+          </div>
+          <div className="row border-bottom font-weight-bold">
+            Bands
           </div>
           <div className="row font-italic border-bottom text-right">
             <div className="col-2">
