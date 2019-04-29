@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-const ukIsdlt = require('uk-ireland-stampduty-calculator');
-
-const { calculate, buyerTypes, countries, propertyTypes } = ukIsdlt;
+const { calculate, buyerTypes, countries, propertyTypes } = require('uk-ireland-stampduty-calculator');
 
 const buyerTypeLabels = {
   [buyerTypes.MOVING_HOUSE]: 'moving home',
@@ -11,13 +9,13 @@ const buyerTypeLabels = {
 };
 
 const Band = function ({start, end, bandAmount, bandLimit, taxAdded, adjustedRate, index}) {
-  const classes = 'col-2 text-right border-left';
+  const col2LeftBorderTextRight = 'col-2 text-right border-left';
   return (
     <div key={`band-${index}`} className="row border-bottom text-monospace">
       <div className="col-2 text-right">{start}</div>
-      <div className={classes}>{end}</div>
-      <div className={classes}>{bandAmount}</div>
-      <div className={classes}>{adjustedRate}</div>
+      <div className={col2LeftBorderTextRight}>{end}</div>
+      <div className={col2LeftBorderTextRight}>{bandAmount}</div>
+      <div className={col2LeftBorderTextRight}>{adjustedRate}</div>
       <div className="col-4 text-right border-left">{taxAdded.toFixed(2)}</div>
     </div>
   );
@@ -60,6 +58,27 @@ class App extends Component {
 
     const { propertyValue, summaryBands, tax, propertyType, buyerType, country } = this.state;
     const currencySymbol = String.fromCharCode(country === countries.IRELAND ? 8364 : 163);
+    const col2LeftBorder = 'col-2 border-left';
+    const buyerTypeDropdownComponent = (
+      propertyType !== propertyTypes.RESIDENTIAL
+      || country === countries.IRELAND
+    ) ? '' : (
+        <select
+          className="form-control"
+          name="buyerType"
+          onChange={this.handleChange}
+          defaultValue={buyerType}
+        >
+          {Object.keys(buyerTypes).sort().reverse().map(propName => (
+            <option
+              key={buyerTypes[propName]}
+              value={buyerTypes[propName]}>
+              {buyerTypeLabels[buyerTypes[propName]]}
+            </option>
+          ))
+          }
+        </select>
+      );
 
     return (
       <div className="App">
@@ -73,7 +92,7 @@ class App extends Component {
                 name="propertyValue"
                 placeholder="property value"
                 onChange={this.handleChange}
-                maxLength="10"
+                maxLength="9"
                 defaultValue={propertyValue}
               />
               {`${currencySymbol}price`}
@@ -113,27 +132,7 @@ class App extends Component {
               </select>
             </div>
             <div className="col-3">
-              <select
-                className="form-control"
-                name="buyerType"
-                onChange={this.handleChange}
-                defaultValue={buyerType}
-                style={
-                  (
-                    propertyType !== propertyTypes.RESIDENTIAL
-                    || country === countries.IRELAND
-                  ) ? { display: 'none' } : {}
-                }
-              >
-                {Object.keys(buyerTypes).sort().reverse().map(propName => (
-                  <option
-                    key={buyerTypes[propName]}
-                    value={buyerTypes[propName]}>
-                    {buyerTypeLabels[buyerTypes[propName]]}
-                  </option>
-                ))
-                }
-              </select>
+              {buyerTypeDropdownComponent}
             </div>
           </div>
         </div>
@@ -152,17 +151,17 @@ class App extends Component {
               {currencySymbol}
               )
             </div>
-            <div className="col-2 border-left">
+            <div className={col2LeftBorder}>
               to(
               {currencySymbol}
               )
             </div>
-            <div className="col-2 border-left">
+            <div className={col2LeftBorder}>
               taxable(
               {currencySymbol}
             )
             </div>
-            <div className="col-2 border-left">
+            <div className={col2LeftBorder}>
               rate(
               {String.fromCharCode(37)}
               )
