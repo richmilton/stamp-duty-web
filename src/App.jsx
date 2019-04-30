@@ -13,10 +13,10 @@ const Band = function ({start, end, bandAmount, bandLimit, taxAdded, adjustedRat
   return (
     <div key={`band-${index}`} className="row border-bottom text-monospace">
       <div className="col-2 text-right">{start}</div>
-      <div className={col2LeftBorderTextRight}>{end}</div>
+      <div className={col2LeftBorderTextRight}>{bandLimit}</div>
       <div className={col2LeftBorderTextRight}>{bandAmount}</div>
       <div className={col2LeftBorderTextRight}>{adjustedRate}</div>
-      <div className="col-4 text-right border-left">{taxAdded.toFixed(2)}</div>
+      <div className="col-4 text-right border-left">{taxAdded}</div>
     </div>
   );
 };
@@ -45,6 +45,7 @@ class App extends Component {
     const { summaryBands, tax } = calculate(
       propertyValue, propertyType, country, buyerType
     );
+    console.log(summaryBands);
     this.setState({ summaryBands, tax })
   }
 
@@ -139,7 +140,7 @@ class App extends Component {
         <div className="container">
           <div className="row border-bottom font-weight-bold">
             <div className="col-12">
-              {`${currencySymbol + tax.toFixed(2)} tax due`}
+              {`${currencySymbol + tax} tax due`}
             </div>
           </div>
           <div className="row border-bottom font-weight-bold">
@@ -175,7 +176,7 @@ class App extends Component {
           {summaryBands.map((props, index) => Band({index, ...props}))}
           <div className="row text-right border-bottom text-monospace">
             <div className="col-12">
-              {tax.toFixed(2)}
+              {tax}
             </div>
           </div>
         </div>
