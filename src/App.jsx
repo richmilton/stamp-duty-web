@@ -31,6 +31,7 @@ class App extends Component {
       country: countries.ENGLAND,
       summaryBands: [],
       tax: 0,
+      comment: 'hello',
     };
     this.handleChange = this.handleChange.bind(this);
     this.doCalc = this.doCalc.bind(this);
@@ -42,11 +43,11 @@ class App extends Component {
 
   doCalc() {
     const { propertyValue, propertyType, country, buyerType } = this.state;
-    const { summaryBands, tax } = calculate(
+    const { summaryBands, tax, comment } = calculate(
       propertyValue, propertyType, country, buyerType
     );
-    console.log(summaryBands);
-    this.setState({ summaryBands, tax })
+    console.log(comment);
+    this.setState({ summaryBands, tax, comment })
   }
 
   handleChange(event) {
@@ -57,7 +58,15 @@ class App extends Component {
 
   render() {
 
-    const { propertyValue, summaryBands, tax, propertyType, buyerType, country } = this.state;
+    const {
+      propertyValue,
+      summaryBands,
+      tax,
+      propertyType,
+      buyerType,
+      country,
+      comment,
+    } = this.state;
     const currencySymbol = String.fromCharCode(country === countries.IRELAND ? 8364 : 163);
     const col2LeftBorder = 'col-2 border-left';
     const buyerTypeDropdownComponent = (
@@ -80,6 +89,7 @@ class App extends Component {
           }
         </select>
       );
+    const commentDiv = comment === '' ? '' : <div className="col-12 font-italic">{comment}</div>;
 
     return (
       <div className="App">
@@ -138,13 +148,14 @@ class App extends Component {
           </div>
         </div>
         <div className="container">
-          <div className="row border-bottom font-weight-bold">
-            <div className="col-12">
+          <div className="row border-bottom">
+            <div className="col-12 font-weight-bold">
               {`${currencySymbol + tax} tax due`}
             </div>
+            {commentDiv}
           </div>
-          <div className="row border-bottom font-weight-bold">
-            Bands
+          <div className="row border-bottom">
+            <span className="font-weight-bold">Bands</span>
           </div>
           <div className="row font-italic border-bottom text-right">
             <div className="col-2">
