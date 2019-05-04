@@ -51,8 +51,17 @@ class App extends Component {
   }
 
   handleChange(event) {
-    // console.log(event.target.value);
     const { name, value } = event.target;
+    const integerPattern = /^[-+]?\d*$/;
+    if (name === 'propertyValue') {
+      if (!integerPattern.test(value)) {
+        this.setState({comment: 'whole numbers only please'});
+        return;
+      } else if (value.length > 9) {
+        this.setState({comment: 'maximum input 99999999'});
+        return;
+      }
+    }
     this.setState({ [name]: value }, this.doCalc);
   }
 
@@ -103,9 +112,7 @@ class App extends Component {
                 name="propertyValue"
                 placeholder="property value"
                 onChange={this.handleChange}
-                maxLength="9"
-                defaultValue={propertyValue}
-                pattern="\d*"
+                value={propertyValue}
               />
               {`${currencySymbol}price`}
             </div>
