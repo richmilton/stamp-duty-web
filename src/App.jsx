@@ -38,6 +38,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    // console.log(Sdc)
     this.doCalc();
   }
 
@@ -46,7 +47,6 @@ class App extends Component {
     const { summaryBands, tax, comment } = calculate(
       propertyValue, propertyType, country, buyerType
     );
-    console.log(comment);
     this.setState({ summaryBands, tax, comment })
   }
 
@@ -105,6 +105,7 @@ class App extends Component {
                 onChange={this.handleChange}
                 maxLength="9"
                 defaultValue={propertyValue}
+                pattern="\d*"
               />
               {`${currencySymbol}price`}
             </div>
