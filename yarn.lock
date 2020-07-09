@@ -9794,10 +9794,10 @@ uglify-js@^3.1.4:
     commander "~2.20.0"
     source-map "~0.6.1"
 
-uk-ireland-stampduty-calculator@^1.1.8:
-  version "1.1.9"
-  resolved "https://registry.yarnpkg.com/uk-ireland-stampduty-calculator/-/uk-ireland-stampduty-calculator-1.1.9.tgz#f2802d3934698cad4ca70115e5e7d6738c2eb2ba"
-  integrity sha512-/fR5GI3UxhnSzVSTZOkZ+xX2xYrYXN+g4BDqMVoZo5/jIjHXQUt2hO14L2r3ze/VYxCbDPGwHiE/jugpGGOoUQ==
+uk-ireland-stampduty-calculator@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/uk-ireland-stampduty-calculator/-/uk-ireland-stampduty-calculator-1.2.0.tgz#26eba1e6c320a05a4ccf81c6cceacace68a64812"
+  integrity sha512-n0ShPFph7uFNQqZUWOW699FYifVDj7I/oJRwbnpgNdlFRKMutwKZHWPlrtFircuL6li1JWITBdtM1b5dOK76cw==
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
