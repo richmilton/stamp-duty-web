@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/stamp-duty-web/static/css/main.3c59d58d.css",
-    "main.js": "/stamp-duty-web/static/js/main.3a750f57.js",
+    "main.js": "/stamp-duty-web/static/js/main.f5ca0ed8.js",
     "index.html": "/stamp-duty-web/index.html",
     "main.3c59d58d.css.map": "/stamp-duty-web/static/css/main.3c59d58d.css.map",
-    "main.3a750f57.js.map": "/stamp-duty-web/static/js/main.3a750f57.js.map"
+    "main.f5ca0ed8.js.map": "/stamp-duty-web/static/js/main.f5ca0ed8.js.map"
   },
   "entrypoints": [
     "static/css/main.3c59d58d.css",
-    "static/js/main.3a750f57.js"
+    "static/js/main.f5ca0ed8.js"
   ]
 }
