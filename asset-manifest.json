@@ -1,15 +1,13 @@
 {
-  "main.css": "/stamp-duty-web/static/css/main.a4208b0f.chunk.css",
-  "main.js": "/stamp-duty-web/static/js/main.5d2f466b.chunk.js",
-  "main.js.map": "/stamp-duty-web/static/js/main.5d2f466b.chunk.js.map",
-  "runtime~main.js": "/stamp-duty-web/static/js/runtime~main.53293ddb.js",
-  "runtime~main.js.map": "/stamp-duty-web/static/js/runtime~main.53293ddb.js.map",
-  "static/css/2.87813b20.chunk.css": "/stamp-duty-web/static/css/2.87813b20.chunk.css",
-  "static/js/2.e469c09b.chunk.js": "/stamp-duty-web/static/js/2.e469c09b.chunk.js",
-  "static/js/2.e469c09b.chunk.js.map": "/stamp-duty-web/static/js/2.e469c09b.chunk.js.map",
-  "index.html": "/stamp-duty-web/index.html",
-  "precache-manifest.93acd50de3da57d91ca42f42d7947948.js": "/stamp-duty-web/precache-manifest.93acd50de3da57d91ca42f42d7947948.js",
-  "service-worker.js": "/stamp-duty-web/service-worker.js",
-  "static/css/2.87813b20.chunk.css.map": "/stamp-duty-web/static/css/2.87813b20.chunk.css.map",
-  "static/css/main.a4208b0f.chunk.css.map": "/stamp-duty-web/static/css/main.a4208b0f.chunk.css.map"
+  "files": {
+    "main.css": "/stamp-duty-web/static/css/main.3c59d58d.css",
+    "main.js": "/stamp-duty-web/static/js/main.3a750f57.js",
+    "index.html": "/stamp-duty-web/index.html",
+    "main.3c59d58d.css.map": "/stamp-duty-web/static/css/main.3c59d58d.css.map",
+    "main.3a750f57.js.map": "/stamp-duty-web/static/js/main.3a750f57.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3c59d58d.css",
+    "static/js/main.3a750f57.js"
+  ]
 }
